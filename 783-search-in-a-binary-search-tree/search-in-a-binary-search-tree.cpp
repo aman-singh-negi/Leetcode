@@ -13,6 +13,7 @@ class Solution {
 public:
     TreeNode* searchBST(TreeNode* root, int key) 
     {
+        //Recursive
         if(root==NULL)return NULL;
         else if(root->val>key)return searchBST(root->left,key);
         else if(root->val<key)return searchBST(root->right,key);
