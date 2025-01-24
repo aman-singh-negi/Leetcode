@@ -21,19 +21,10 @@ public:
         *ans=max(*ans,root->val + leftH + rightH);
         return root->val + max(leftH,rightH);
     }
-    int cal(TreeNode* root,int* ans)
-    {
-        if(root==NULL)return 0;
-        int leftH=calculate(root->left,ans);
-        int rightH=calculate(root->right,ans);
-        *ans=max(*ans,root->val + leftH + rightH);
-        return root->val + max(leftH,rightH);
-    }
     int maxPathSum(TreeNode* root) 
     {
         int ans=INT_MIN;
         calculate(root,&ans);
-        if(ans==0)cal(root,&ans);
         return ans;
     }
 };
