@@ -1,35 +1,16 @@
 class Solution {
 public:
-    void bfs(vector<vector<char>>&grid,int i,int j)
+    void dfs(vector<vector<char>>& grid,int i,int j)
     {
-        queue<pair<int,int>>q;
-        q.push({i,j});
-        grid[i][j]='0';
-        while(!q.empty())
-        {
-            pair<int,int>temp=q.front();
-            q.pop();
-            if(temp.first>0 && grid[temp.first-1][temp.second]=='1')
-            {
-                q.push({temp.first-1,temp.second});
-                grid[temp.first-1][temp.second]='0';
-            }
-            if(temp.second>0 && grid[temp.first][temp.second-1]=='1')
-            {
-                q.push({temp.first,temp.second-1});
-                grid[temp.first][temp.second-1]='0';
-            }
-            if(temp.second+1<grid[0].size() && grid[temp.first][temp.second+1]=='1')
-            {
-                q.push({temp.first,temp.second+1});
-                grid[temp.first][temp.second+1]='0';
-            }
-            if(temp.first+1<grid.size() && grid[temp.first+1][temp.second]=='1')
-            {
-                q.push({temp.first+1,temp.second});
-                grid[temp.first+1][temp.second]='0';
-            }
-        }
+        int m=grid.size();
+        int n=grid[0].size();
+        if(i<0 || i>=m || j<0 || j>=n || grid[i][j] == '0') return;
+        grid[i][j] = '0';
+        if(i+1<m && grid[i+1][j]=='1')dfs(grid,i+1,j);
+        if(j+1<n && grid[i][j+1]=='1')dfs(grid,i,j+1);
+        if(i>0 && grid[i-1][j]=='1')dfs(grid,i-1,j);
+        if(j>0 && grid[i][j-1]=='1')dfs(grid,i,j-1);
+
     }
     int numIslands(vector<vector<char>>& grid) 
     {
@@ -41,7 +22,7 @@ public:
                 if(grid[i][j]=='1')
                 {
                     cnt++;
-                    bfs(grid,i,j);
+                    dfs(grid,i,j);
                 }
             }
         }
