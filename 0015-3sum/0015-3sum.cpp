@@ -1,22 +1,41 @@
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-        int n = nums.size();
-        sort(nums.begin(), nums.end());
-        set<vector<int>> set;
-        vector<vector<int>> output;
-        for(int i=0; i<n-2; i++){
-            for(int j=i+1; j<n-1; j++){
-                for(int k=j+1; k<n; k++){
-                    if((nums[i] + nums[j] + nums[k] == 0) && i != j && j != k && k != i){
-                        set.insert({nums[i], nums[j], nums[k]});
+        sort(nums.begin() , nums.end());    
+        if(nums.size() < 3){
+            return {};
+        }
+        if(nums[0] > 0){
+            return {};
+        }
+        vector<vector<int>> answer;
+        for(int i = 0 ; i < nums.size() ; ++i){
+            if(nums[i] > 0){
+                break;
+            }
+            if(i > 0 && nums[i] == nums[i - 1]){
+                continue;
+            }
+            int low = i + 1 , high = nums.size() - 1;
+            int sum = 0;
+            while(low < high){
+                sum = nums[i] + nums[low] + nums[high];
+                if(sum > 0){
+                    high--;
+                } else if(sum < 0){
+                    low++;
+                } else {
+                    answer.push_back({nums[i] , nums[low] , nums[high]}); 
+                    int last_low_occurence = nums[low] , last_high_occurence = nums[high]; 
+                    while(low < high && nums[low] == last_low_occurence){   
+                        low++;
+                    }
+                    while(low < high && nums[high] == last_high_occurence){
+                        high--;
                     }
                 }
             }
         }
-        for(auto it : set){
-            output.push_back(it);
-        }
-        return output;
+        return answer;
     }
 };
