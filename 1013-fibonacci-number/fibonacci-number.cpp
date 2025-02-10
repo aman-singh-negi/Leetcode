@@ -1,15 +1,15 @@
 class Solution {
 public:
-    int calculate(int n,vector<int>&v)
-    {
-        if(n<=1)return n;
-        if(v[n]!=-1)return v[n];
-        v[n]=calculate(n-1,v)+calculate(n-2,v);
-        return v[n];
-    }
     int fib(int n) {
-        //Memoization
+        //Tabular
         vector<int>v(n+1,-1);
-        return calculate(n,v);
+        if(n<=1)return n;
+        v[0]=0;
+        v[1]=1;
+        for(int i=2;i<=n;i++)
+        {
+            v[i]=v[i-1]+v[i-2];
+        }
+        return v[n];
     }
 };
