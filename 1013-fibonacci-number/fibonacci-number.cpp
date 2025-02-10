@@ -1,8 +1,15 @@
 class Solution {
 public:
+    int calculate(int n,vector<int>&v)
+    {
+        if(n<=1)return n;
+        if(v[n]!=-1)return v[n];
+        v[n]=calculate(n-1,v)+calculate(n-2,v);
+        return v[n];
+    }
     int fib(int n) {
-        if(n==0)return 0;
-        if(n==1)return 1;
-        return fib(n-1)+fib(n-2);
+        //Memoization
+        vector<int>v(n+1,-1);
+        return calculate(n,v);
     }
 };
