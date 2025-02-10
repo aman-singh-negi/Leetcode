@@ -8,7 +8,7 @@ public:
             if(s[i]>='0' && s[i]<='9')
             {
                 s.erase(i-1,2);
-                i-=2;
+                i--;
             }
             else i++;
         }
