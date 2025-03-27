@@ -1,23 +1,23 @@
 class Solution {
 private:
-    void dfs(vector<vector<int>>&graph,vector<bool>&visited,int src)
+    void dfs(vector<vector<int>>&adj,vector<bool>&visited,int src)
     {
         visited[src]=true;
-        for(int i=0;i<graph[src].size();i++)
+        for(int i=0;i<adj[src].size();i++)
         {
-            if(visited[graph[src][i]]==false)dfs(graph,visited,graph[src][i]);
+            if(visited[adj[src][i]]==false)dfs(adj,visited,adj[src][i]);
         }
     }
 public:
     bool validPath(int n, vector<vector<int>>& edges, int source, int destination) {
-        vector<vector<int>>graph(n,vector<int>());
+        vector<vector<int>>adj(n,vector<int>());
         for(int i=0;i<edges.size();i++)
         {
-            graph[edges[i][0]].push_back(edges[i][1]);
-            graph[edges[i][1]].push_back(edges[i][0]);
+            adj[edges[i][0]].push_back(edges[i][1]);
+            adj[edges[i][1]].push_back(edges[i][0]);
         }
         vector<bool>visited(n,false);
-        dfs(graph,visited,source);
+        dfs(adj,visited,source);
         return visited[destination];
     }
 };
