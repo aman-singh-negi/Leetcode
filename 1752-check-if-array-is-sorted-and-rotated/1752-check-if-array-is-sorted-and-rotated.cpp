@@ -1,20 +1,17 @@
 class Solution {
 public:
-    bool check(vector<int>& nums) 
-    {
-        int cnt=0;
-        if(nums[0]<nums[nums.size()-1])cnt++;
-        int flag=0;
+    bool check(vector<int>& nums) {
+        int check=0;
+        if(nums[0]>=nums[nums.size()-1])check++;
         for(int i=0;i<nums.size()-1;i++)
         {
-            if(nums[i]!=nums[i+1])flag=1;
+            if(check==1 && nums[i]>nums[i+1])
+            {
+                check++;
+            }
+            else if(check==0 && nums[i]>nums[i+1])return false;
+            else if(nums[i] >nums[i+1] && check==2)return false;
         }
-        if(!flag)return true;
-        for(int i=1;i<nums.size();i++)
-        {
-            if(nums[i]<nums[i-1])cnt++;
-        }
-        if(cnt==1)return true;
-        return false;
+        return true;
     }
 };
