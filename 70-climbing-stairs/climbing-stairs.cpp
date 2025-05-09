@@ -1,14 +1,13 @@
 class Solution {
-private:
-    int memo(int n,vector<int>&v)
-    {
-        if(n<=1)return 1;
-        if(v[n]!=-1)return v[n];
-        return v[n]=memo(n-1,v)+memo(n-2,v);
-    }
 public:
     int climbStairs(int n) {
         vector<int>v(n+1,-1);
-        return memo(n,v);
+        v[0]=1;
+        v[1]=1;
+        for(int i=2;i<=n;i++)
+        {
+            v[i]=v[i-1]+v[i-2];
+        }
+        return v[n];
     }
 };
