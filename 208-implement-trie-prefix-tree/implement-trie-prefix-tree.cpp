@@ -1,19 +1,11 @@
 class Node
 {
     public:
-    Node* arr[26];
+    Node* arr[26]={NULL};
     bool flag=false;
-    Node()
-    {
-        for(int i=0;i<26;i++)arr[i]=NULL;
-    }
     void setFlag()
     {
         flag=true;
-    }
-    void resetFlag()
-    {
-        flag=false;
     }
     bool checkFlag()
     {
@@ -23,35 +15,33 @@ class Node
     {
         return arr[ch-'a']!=NULL;
     }
-    void insertNode(char ch,Node* n)
-    {
-        arr[ch-'a']=n;
-    }
     Node* getNode(char ch)
     {
         return arr[ch-'a'];
+    }
+    void insertNode(char ch,Node* n)
+    {
+        arr[ch-'a']=n;
     }
 };
 class Trie {
 public:
     Node* root;
-    
     Trie() {
-        root = new Node();
+        root=new Node();
     }
     
     void insert(string word) {
-        Node* node=root;
+        Node* temp=root;
         for(int i=0;i<word.size();i++)
         {
-            if(!node->checkChar(word[i]))
+            if(!temp->checkChar(word[i]))
             {
-                Node* temp= new Node();
-                node->insertNode(word[i],temp);
+                temp->insertNode(word[i],new Node());
             }
-            node=node->getNode(word[i]);
+            temp=temp->getNode(word[i]);
         }
-        node->setFlag();
+        temp->setFlag();
     }
     
     bool search(string word) {
@@ -64,8 +54,7 @@ public:
             }
             temp=temp->getNode(word[i]);
         }
-        if(!temp->checkFlag())return false;
-        return true;
+        return temp->checkFlag();
     }
     
     bool startsWith(string prefix) {
