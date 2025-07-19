@@ -5,8 +5,8 @@ public:
         vector<int>dp(n+1,0);
         dp[1]=money[0];
         for(int i=2;i<=n;i++)
-        {
-            dp[i]=max(dp[i-1],money[i-1]+dp[i-2]);
+        {   
+            dp[i]=max(dp[i-1],dp[i-2]+money[i-1]);
         }
         return dp[n];
     }
