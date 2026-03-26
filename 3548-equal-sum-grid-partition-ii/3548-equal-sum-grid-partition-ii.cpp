@@ -5,11 +5,12 @@ public:
         int n=grid.size();
         int m=grid[0].size();
         unordered_map<int,int> bottom, top;
-        long long bottomsum=0,topsum=0;
+        long long bottomsum=0,topsum=0,maxi=INT_MIN;
         for(int i=0;i<n;i++)
         {
             for(int j=0;j<m;j++)
             {
+                if(maxi<grid[i][j])maxi=grid[i][j];
                 bottomsum+=grid[i][j];
                 bottom[grid[i][j]]++;
             }
@@ -27,14 +28,14 @@ public:
             //Conditions
             if(topsum==bottomsum)return true;
             long long diff=topsum-bottomsum;
-            if(diff>0 && abs(diff)<=100000)
+            if(diff>0 && abs(diff)<=maxi)
             {
                 //Top section is greater
                 if(grid[0][0]==diff || grid[0][m-1]==diff)return true;
                 if(m==1 && diff==grid[i][0])return true;
                 if(i>0 && m>1  && top.count(diff))return true;
             }
-            else if(abs(diff)<=100000){
+            else if(abs(diff)<=maxi){
                 //Bottom section is Greater
                 diff=diff*(-1);
                 if(grid[i+1][0]==diff || grid[i+1][m-1]==diff)return true;
