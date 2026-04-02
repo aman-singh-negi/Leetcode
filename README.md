@@ -13,6 +13,7 @@
 | [2906-construct-product-matrix](https://github.com/aman-singh-negi/Leetcode/tree/main/2906-construct-product-matrix/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/aman-singh-negi/Leetcode/tree/main/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
 | [3212-count-submatrices-with-equal-frequency-of-x-and-y](https://github.com/aman-singh-negi/Leetcode/tree/main/3212-count-submatrices-with-equal-frequency-of-x-and-y/) | Medium |
+| [3418-maximum-amount-of-money-robot-can-earn](https://github.com/aman-singh-negi/Leetcode/tree/main/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 | [3546-equal-sum-grid-partition-i](https://github.com/aman-singh-negi/Leetcode/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/aman-singh-negi/Leetcode/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 | [3643-flip-square-submatrix-vertically](https://github.com/aman-singh-negi/Leetcode/tree/main/3643-flip-square-submatrix-vertically/) | Easy |
@@ -24,6 +25,7 @@
 | [2906-construct-product-matrix](https://github.com/aman-singh-negi/Leetcode/tree/main/2906-construct-product-matrix/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/aman-singh-negi/Leetcode/tree/main/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
 | [3212-count-submatrices-with-equal-frequency-of-x-and-y](https://github.com/aman-singh-negi/Leetcode/tree/main/3212-count-submatrices-with-equal-frequency-of-x-and-y/) | Medium |
+| [3418-maximum-amount-of-money-robot-can-earn](https://github.com/aman-singh-negi/Leetcode/tree/main/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 | [3546-equal-sum-grid-partition-i](https://github.com/aman-singh-negi/Leetcode/tree/main/3546-equal-sum-grid-partition-i/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/aman-singh-negi/Leetcode/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 | [3643-flip-square-submatrix-vertically](https://github.com/aman-singh-negi/Leetcode/tree/main/3643-flip-square-submatrix-vertically/) | Easy |
@@ -43,6 +45,7 @@
 | ------- | ------- |
 | [0435-non-overlapping-intervals](https://github.com/aman-singh-negi/Leetcode/tree/main/0435-non-overlapping-intervals/) | Medium |
 | [1594-maximum-non-negative-product-in-a-matrix](https://github.com/aman-singh-negi/Leetcode/tree/main/1594-maximum-non-negative-product-in-a-matrix/) | Medium |
+| [3418-maximum-amount-of-money-robot-can-earn](https://github.com/aman-singh-negi/Leetcode/tree/main/3418-maximum-amount-of-money-robot-can-earn/) | Medium |
 ## Enumeration
 | Problem Name | Difficulty |
 | ------- | ------- |
