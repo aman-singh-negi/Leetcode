@@ -1,32 +1,41 @@
 class Solution {
-public: 
-    vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        int n=intervals.size();
-        sort(intervals.begin(),intervals.end());
-        int starttime=intervals[0][0];
-        int endtime=intervals[0][1];
+public:
+    vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
         vector<vector<int>>ans;
-        for(int i=1;i<n;i++)
+        intervals.push_back(newInterval);
+        sort(intervals.begin(),intervals.end());
+        int i=0;
+        for(i=0;i<intervals.size();i++)
         {
-            if(endtime>=intervals[i][0])
+            if(newInterval[0]>intervals[i][1])
+            {
+                ans.push_back(intervals[i]);
+            }
+            else break;
+        }
+        if(i==intervals.size())
+        {
+            ans.push_back(newInterval);
+            return ans;
+        }
+        //Merge
+        int startTime=min(intervals[i][0],newInterval[0]);
+        int endTime=max(intervals[i][1],newInterval[1]);
+        i++;
+        for(i;i<intervals.size();i++)
+        {
+            if(endTime>=intervals[i][0])
             {
                 //Merge
-                endtime=max(endtime,intervals[i][1]);
+                endTime=max(intervals[i][1],endTime);
             }
-            else
-            {
-                ans.push_back({starttime,endtime});
-                starttime=-1;
-                starttime=intervals[i][0];
-                endtime=intervals[i][1];
-            }
+            else break;
         }
-            ans.push_back({starttime,endtime});
+        ans.push_back({startTime,endTime});
+        for(i;i<intervals.size();i++)
+        {
+            ans.push_back(intervals[i]);
+        }
         return ans;
-
-    }
-    vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
-        intervals.push_back(newInterval);
-        return merge(intervals);
     }
 };
