@@ -1,41 +1,25 @@
 class Solution {
 public:
-    vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
-        vector<vector<int>>ans;
-        intervals.push_back(newInterval);
-        sort(intervals.begin(),intervals.end());
-        int i=0;
-        for(i=0;i<intervals.size();i++)
-        {
-            if(newInterval[0]>intervals[i][1])
-            {
-                ans.push_back(intervals[i]);
-            }
-            else break;
+    vector<vector<int>> insert(vector<vector<int>>& intervals,vector<int>& newInterval) {
+        int n = intervals.size(), i = 0;
+        vector<vector<int>> res;
+        while (i < n && intervals[i][1] < newInterval[0]) {
+            res.push_back(intervals[i]);
+            i++;
         }
-        if(i==intervals.size())
-        {
-            ans.push_back(newInterval);
-            return ans;
+        // Case 2: overlapping case and merging of intervals
+        while (i < n && newInterval[1] >= intervals[i][0]) {
+            newInterval[0] = min(newInterval[0], intervals[i][0]);
+            newInterval[1] = max(newInterval[1], intervals[i][1]);
+            i++;
         }
-        //Merge
-        int startTime=min(intervals[i][0],newInterval[0]);
-        int endTime=max(intervals[i][1],newInterval[1]);
-        i++;
-        for(i;i<intervals.size();i++)
-        {
-            if(endTime>=intervals[i][0])
-            {
-                //Merge
-                endTime=max(intervals[i][1],endTime);
-            }
-            else break;
+        res.push_back(newInterval);
+
+        // Case 3: no overlapping of intervals after newinterval being merged
+        while (i < n) {
+            res.push_back(intervals[i]);
+            i++;
         }
-        ans.push_back({startTime,endTime});
-        for(i;i<intervals.size();i++)
-        {
-            ans.push_back(intervals[i]);
-        }
-        return ans;
+        return res;
     }
 };
