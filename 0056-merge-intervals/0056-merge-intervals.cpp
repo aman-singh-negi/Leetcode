@@ -2,43 +2,28 @@ class Solution {
 public:
     static bool comp(vector<int>&a,vector<int>&b)
     {
-        if(a[0]<b[0])return true;
-        if(a[0]==b[0])
-        {
-            if(a[1]<b[1])return true;
-            return false;
-        }
-        return false;
+        return a[0]<b[0];
     }
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
-        int n=intervals.size();
         sort(intervals.begin(),intervals.end(),comp);
-        int starttime=intervals[0][0];
-        int endtime=intervals[0][1];
+        int startTime=intervals[0][0];
+        int endTime=intervals[0][1];
         vector<vector<int>>ans;
-        for(int i=0;i<n;i++)
+        for(int i=1;i<intervals.size();i++)
         {
-            if(endtime>=intervals[i][0])
+            if(endTime>=intervals[i][0])
             {
                 //Merge
-                endtime=max(endtime,intervals[i][1]);
+                endTime=max(endTime,intervals[i][1]);
             }
             else
             {
-                if(starttime!=-1)
-                {
-                    ans.push_back({starttime,endtime});
-                    starttime=-1;
-                }
-                    starttime=intervals[i][0];
-                    endtime=intervals[i][1];
+                ans.push_back({startTime,endTime});
+                startTime=intervals[i][0];
+                endTime=intervals[i][1];
             }
         }
-        if(starttime!=-1)
-        {
-            ans.push_back({starttime,endtime});
-        }
+        ans.push_back({startTime,endTime});
         return ans;
-
     }
 };
