@@ -8,6 +8,7 @@
 | [0057-insert-interval](https://github.com/aman-singh-negi/Leetcode/tree/main/0057-insert-interval/) | Medium |
 | [0435-non-overlapping-intervals](https://github.com/aman-singh-negi/Leetcode/tree/main/0435-non-overlapping-intervals/) | Medium |
 | [0452-minimum-number-of-arrows-to-burst-balloons](https://github.com/aman-singh-negi/Leetcode/tree/main/0452-minimum-number-of-arrows-to-burst-balloons/) | Medium |
+| [0874-walking-robot-simulation](https://github.com/aman-singh-negi/Leetcode/tree/main/0874-walking-robot-simulation/) | Medium |
 | [1594-maximum-non-negative-product-in-a-matrix](https://github.com/aman-singh-negi/Leetcode/tree/main/1594-maximum-non-negative-product-in-a-matrix/) | Medium |
 | [1886-determine-whether-matrix-can-be-obtained-by-rotation](https://github.com/aman-singh-negi/Leetcode/tree/main/1886-determine-whether-matrix-can-be-obtained-by-rotation/) | Easy |
 | [2906-construct-product-matrix](https://github.com/aman-singh-negi/Leetcode/tree/main/2906-construct-product-matrix/) | Medium |
@@ -54,6 +55,7 @@
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0874-walking-robot-simulation](https://github.com/aman-singh-negi/Leetcode/tree/main/0874-walking-robot-simulation/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/aman-singh-negi/Leetcode/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 ## Math
 | Problem Name | Difficulty |
@@ -62,6 +64,7 @@
 ## Simulation
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0874-walking-robot-simulation](https://github.com/aman-singh-negi/Leetcode/tree/main/0874-walking-robot-simulation/) | Medium |
 | [2946-matrix-similarity-after-cyclic-shifts](https://github.com/aman-singh-negi/Leetcode/tree/main/2946-matrix-similarity-after-cyclic-shifts/) | Easy |
 ## Greedy
 | Problem Name | Difficulty |
