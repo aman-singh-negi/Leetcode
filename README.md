@@ -58,6 +58,7 @@
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0133-clone-graph](https://github.com/aman-singh-negi/Leetcode/tree/main/0133-clone-graph/) | Medium |
 | [0874-walking-robot-simulation](https://github.com/aman-singh-negi/Leetcode/tree/main/0874-walking-robot-simulation/) | Medium |
 | [3548-equal-sum-grid-partition-ii](https://github.com/aman-singh-negi/Leetcode/tree/main/3548-equal-sum-grid-partition-ii/) | Hard |
 ## Math
@@ -90,4 +91,16 @@
 | ------- | ------- |
 | [0162-find-peak-element](https://github.com/aman-singh-negi/Leetcode/tree/main/0162-find-peak-element/) | Medium |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/aman-singh-negi/Leetcode/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
+## Depth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0133-clone-graph](https://github.com/aman-singh-negi/Leetcode/tree/main/0133-clone-graph/) | Medium |
+## Breadth-First Search
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0133-clone-graph](https://github.com/aman-singh-negi/Leetcode/tree/main/0133-clone-graph/) | Medium |
+## Graph Theory
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0133-clone-graph](https://github.com/aman-singh-negi/Leetcode/tree/main/0133-clone-graph/) | Medium |
 <!---LeetCode Topics End-->
